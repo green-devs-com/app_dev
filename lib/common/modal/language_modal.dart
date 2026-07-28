@@ -1,5 +1,5 @@
 import 'package:app_dev/common/dialog/custom_snackbar.dart';
-import 'package:app_dev/common/dialog/loading_dialog.dart';
+import 'package:app_dev/common/loader/loader_container.dart';
 import 'package:app_dev/common/modal/widgets/modal_title.dart';
 import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/core/theme/custom_theme.dart';
@@ -38,7 +38,7 @@ Future<void> languageModal({
 
           Navigator.pop(context);
 
-          await loadingDialog(context: context, message: "변경 사항 저장 중...");
+          await loadingContainer(context: context, message: "변경 사항 저장 중...");
 
           await Future.delayed(const Duration(seconds: 1));
 

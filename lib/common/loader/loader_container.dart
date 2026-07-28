@@ -2,7 +2,7 @@ import 'package:app_dev/core/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-Future<void> loadingDialog({
+Future<void> loadingContainer({
   required BuildContext context,
   String? message,
   bool? showMessage = true,

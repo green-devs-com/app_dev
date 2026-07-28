@@ -1,9 +1,10 @@
 import 'dart:developer';
 import 'dart:io';
 import 'package:app_dev/common/widgets/custom_elevated_button.dart';
+import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/core/theme/custom_theme.dart';
-import 'package:app_dev/screen/sign/widgets/privacy_terms_text.dart';
-import 'package:app_dev/screen/sign/widgets/sign_in_button.dart';
+import 'package:app_dev/page/sign/widgets/privacy_terms_text.dart';
+import 'package:app_dev/page/sign/widgets/sign_in_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,6 +26,11 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
   // 구글 계정 로그인
   void signInWithGoogle(BuildContext context) async {
     log("signInWithGoogle");
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      Routes.identification,
+      (route) => false,
+    );
     // ref.read(signController).signInWithGoogle(context: context);
   }
 
