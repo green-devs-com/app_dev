@@ -92,5 +92,22 @@ ThemeData lightTheme() {
     cupertinoOverrideTheme: const CupertinoThemeData(
       brightness: Brightness.light,
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 0,
+      backgroundColor: AppColor.backgroundLight,
+      selectedItemColor: AppColor.greenDark,
+      unselectedItemColor: AppColor.textLight.withValues(alpha: 0.4),
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+      selectedLabelStyle: const TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
   );
 }

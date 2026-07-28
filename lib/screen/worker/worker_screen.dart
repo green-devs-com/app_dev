@@ -1,8 +1,4 @@
 import 'dart:developer';
-
-import 'package:app_dev/common/widgets/icon_container.dart';
-import 'package:app_dev/core/theme/custom_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WorkerScreen extends StatefulWidget {
@@ -25,17 +21,6 @@ class _WorkerScreenState extends State<WorkerScreen>
   void movePage(int index) {
     pageController.jumpToPage(index);
     setState(() => page = index);
-  }
-
-  void navigationTapped(int index) {
-    if (index == 1) {
-      movePage(index);
-    } else if (index == 2) {
-    } else if (index == 3) {
-      movePage(index);
-    } else {
-      movePage(index);
-    }
   }
 
   @override
@@ -88,66 +73,29 @@ class _WorkerScreenState extends State<WorkerScreen>
                 Center(child: Text("4")),
               ],
             ),
-            bottomNavigationBar: CupertinoTabBar(
-              backgroundColor: Colors.transparent,
-              activeColor: context.theme.textColor,
-              inactiveColor: context.theme.textColor!.withValues(alpha: 0.4),
+            bottomNavigationBar: BottomNavigationBar(
               iconSize: 25,
-              height: 55,
               items: [
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    height: 43,
-                    child: IconContainer(
-                      size: 22,
-                      icon: "home.svg",
-                      color: page == 0
-                          ? context.theme.mainColor!
-                          : context.theme.textColor!.withValues(alpha: 0.4),
-                    ),
-                  ),
+                  label: "홈",
+                  activeIcon: Icon(Icons.home, size: 30),
+                  icon: Icon(Icons.home_outlined, size: 30),
                 ),
                 BottomNavigationBarItem(
-                  icon: IconContainer(
-                    size: 22,
-                    icon: "search.svg",
-                    color: page == 1
-                        ? context.theme.mainColor!
-                        : context.theme.textColor!.withValues(alpha: 0.4),
-                  ),
+                  label: "채용공고",
+                  icon: Icon(Icons.assignment_add, size: 30),
                 ),
                 BottomNavigationBarItem(
-                  icon: IconContainer(
-                    size: 22,
-                    icon: "edit.svg",
-                    color: context.theme.textColor!.withValues(alpha: 0.4),
-                  ),
+                  label: "근무관리",
+                  icon: Icon(Icons.assessment_outlined, size: 30),
                 ),
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    height: 43,
-                    child: Center(
-                      child: Icon(
-                        CupertinoIcons.chat_bubble_2,
-                        size: 28,
-                        color: page == 3
-                            ? context.theme.mainColor!
-                            : context.theme.textColor!.withValues(alpha: 0.4),
-                      ),
-                    ),
-                  ),
-                ),
-                BottomNavigationBarItem(
-                  icon: IconContainer(
-                    size: 22,
-                    icon: "user.svg",
-                    color: page == 4
-                        ? context.theme.mainColor!
-                        : context.theme.textColor!.withValues(alpha: 0.4),
-                  ),
+                  label: "MY",
+                  activeIcon: Icon(Icons.person, size: 30),
+                  icon: Icon(Icons.person_outline, size: 30),
                 ),
               ],
-              onTap: navigationTapped,
+              onTap: movePage,
               currentIndex: page,
             ),
           ),
