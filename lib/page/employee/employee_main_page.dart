@@ -3,7 +3,7 @@ import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/page/chat/chat_page.dart';
 import 'package:app_dev/page/farmer/farmer_home.dart';
 import 'package:app_dev/page/job/job_page.dart';
-import 'package:app_dev/page/management/management_page.dart';
+import 'package:app_dev/page/management/employee_manage_page.dart';
 import 'package:flutter/material.dart';
 
 class EmployeeMainPage extends StatefulWidget {
@@ -107,7 +107,12 @@ class _EmployeeMainPageState extends State<EmployeeMainPage>
               physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               onPageChanged: onPageChanged,
-              children: [FarmerHome(), JobPage(), ManagementPage(), ChatPage()],
+              children: [
+                FarmerHome(),
+                JobPage(),
+                EmployeeManagePage(),
+                ChatPage(),
+              ],
             ),
             bottomNavigationBar: BottomNavigationBar(
               selectedItemColor: Colors.blueAccent,

@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/page/chat/chat_page.dart';
 import 'package:app_dev/page/farmer/farmer_home.dart';
-import 'package:app_dev/page/management/management_page.dart';
+import 'package:app_dev/page/management/farmer_manage_page.dart';
 import 'package:flutter/material.dart';
 
 class FarmerMainPage extends StatefulWidget {
@@ -103,7 +103,7 @@ class _FarmerMainPageState extends State<FarmerMainPage>
               physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               onPageChanged: onPageChanged,
-              children: [FarmerHome(), ManagementPage(), ChatPage()],
+              children: [FarmerHome(), FarmerManagePage(), ChatPage()],
             ),
             bottomNavigationBar: BottomNavigationBar(
               iconSize: 25,

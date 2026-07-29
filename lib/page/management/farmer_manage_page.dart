@@ -1,14 +1,14 @@
 import 'package:app_dev/core/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
-class ManagementPage extends StatefulWidget {
-  const ManagementPage({super.key});
+class FarmerManagePage extends StatefulWidget {
+  const FarmerManagePage({super.key});
 
   @override
-  State<ManagementPage> createState() => _ManagementPageState();
+  State<FarmerManagePage> createState() => _FarmerManagePageState();
 }
 
-class _ManagementPageState extends State<ManagementPage>
+class _FarmerManagePageState extends State<FarmerManagePage>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
   @override
