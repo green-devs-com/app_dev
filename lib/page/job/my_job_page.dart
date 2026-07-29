@@ -62,7 +62,23 @@ class _MyJobPageState extends State<MyJobPage>
           controller: tabController,
           physics: NeverScrollableScrollPhysics(),
           children: [
-            Column(children: [JobCard(), JobCard(), JobCard(), JobCard()]),
+            SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(top: 10, bottom: 20),
+                child: Column(
+                  children: [
+                    JobCard(),
+                    JobCard(),
+                    JobCard(),
+                    JobCard(),
+                    JobCard(),
+                    JobCard(),
+                    JobCard(),
+                    JobCard(),
+                  ],
+                ),
+              ),
+            ),
             Center(child: Text("모집중")),
             Center(child: Text("마감")),
           ],

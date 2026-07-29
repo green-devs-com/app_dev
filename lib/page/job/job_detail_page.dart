@@ -281,10 +281,10 @@ class JobDetailPage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(15, 10, 15, 12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.theme.bgColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -294,14 +294,35 @@ class JobDetailPage extends StatelessWidget {
         top: false,
         child: Row(
           children: [
-            /// 지원하기
+            // // 지원하기
+            // Expanded(
+            //   child: SizedBox(
+            //     height: 52,
+            //     child: ElevatedButton(
+            //       onPressed: () {},
+            //       style: ElevatedButton.styleFrom(
+            //         backgroundColor: Colors.blueAccent,
+            //         foregroundColor: Colors.white,
+            //         elevation: 0,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(10),
+            //         ),
+            //       ),
+            //       child: const Text(
+            //         "지원하기",
+            //         style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // 수정하기
             Expanded(
               child: SizedBox(
                 height: 52,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff2878E5),
+                    backgroundColor: context.theme.mainColor,
                     foregroundColor: Colors.white,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
@@ -309,25 +330,61 @@ class JobDetailPage extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    "지원하기",
+                    "수정하기",
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
                   ),
                 ),
               ),
             ),
-
             const SizedBox(width: 10),
 
-            /// 문의하기
+            // // 문의하기
+            // Expanded(
+            //   child: SizedBox(
+            //     height: 52,
+            //     child: OutlinedButton.icon(
+            //       onPressed: () {},
+            //       icon: Icon(
+            //         Icons.chat_bubble_outline,
+            //         color: context.theme.textColor,
+            //         size: 18,
+            //       ),
+            //       label: Text(
+            //         "문의하기",
+            //         style: TextStyle(
+            //           color: context.theme.textColor,
+            //           fontSize: 15,
+            //           fontWeight: FontWeight.w700,
+            //         ),
+            //       ),
+            //       style: OutlinedButton.styleFrom(
+            //         foregroundColor: const Color(0xff333333),
+            //         side: const BorderSide(color: Color(0xffE5E5E5)),
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(10),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // 삭제하기
             Expanded(
               child: SizedBox(
                 height: 52,
                 child: OutlinedButton.icon(
                   onPressed: () {},
-                  icon: const Icon(Icons.chat_bubble_outline, size: 18),
-                  label: const Text(
-                    "문의하기",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                  icon: Icon(
+                    Icons.delete_outline_rounded,
+                    color: context.theme.textColor,
+                    size: 18,
+                  ),
+                  label: Text(
+                    "삭제하기",
+                    style: TextStyle(
+                      color: context.theme.textColor,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: const Color(0xff333333),
