@@ -41,7 +41,6 @@ class JobCard extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-
             const SizedBox(width: 12),
 
             /// 기존 내용

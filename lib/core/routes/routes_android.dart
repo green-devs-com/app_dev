@@ -3,6 +3,7 @@ import 'package:app_dev/page/auth/create_user_page.dart';
 import 'package:app_dev/page/employee/employee_main_page.dart';
 import 'package:app_dev/page/job/job_detail_page.dart';
 import 'package:app_dev/page/job/my_job_page.dart';
+import 'package:app_dev/page/management/farmer/applicant_detail_page.dart';
 import 'package:app_dev/page/notification/notification_page.dart';
 import 'package:app_dev/page/setting/setting_page.dart';
 import 'package:app_dev/page/sign/identification_page.dart';
@@ -98,6 +99,12 @@ class RoutesAndroid {
       // 채용 상세 화면
       case Routes.jobDetail:
         return MaterialPageRoute(builder: (context) => const JobDetailPage());
+
+      // 지원자 상세 화면
+      case Routes.applicantDetail:
+        return MaterialPageRoute(
+          builder: (context) => const ApplicantDetailPage(),
+        );
 
       default:
         return MaterialPageRoute(

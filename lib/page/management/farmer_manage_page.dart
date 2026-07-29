@@ -1,4 +1,7 @@
 import 'package:app_dev/core/theme/custom_theme.dart';
+import 'package:app_dev/page/management/farmer/applicants_list.dart';
+import 'package:app_dev/page/management/farmer/completed_list.dart';
+import 'package:app_dev/page/management/farmer/confirmed_list.dart';
 import 'package:flutter/material.dart';
 
 class FarmerManagePage extends StatefulWidget {
@@ -53,11 +56,7 @@ class _FarmerManagePageState extends State<FarmerManagePage>
         body: TabBarView(
           controller: tabController,
           physics: NeverScrollableScrollPhysics(),
-          children: [
-            Center(child: Text("지원자")),
-            Center(child: Text("확정 인원")),
-            Center(child: Text("작업 완료")),
-          ],
+          children: [ApplicantsList(), ConfirmedList(), CompletedList()],
         ),
       ),
     );

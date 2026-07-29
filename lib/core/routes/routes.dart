@@ -8,4 +8,5 @@ class Routes {
   static const String notification = "notification";
   static const String myjob = "myjob";
   static const String jobDetail = "jobDetail";
+  static const String applicantDetail = "applicantDetail";
 }
