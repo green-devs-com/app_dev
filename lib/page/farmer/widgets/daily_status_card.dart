@@ -1,4 +1,3 @@
-import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/core/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -60,16 +59,7 @@ class DailyStatusCard extends StatelessWidget {
                 _divider(),
 
                 Expanded(
-                  child: _StatusItem(
-                    title: "모집 중 공고",
-                    value: '3',
-                    unit: "건",
-                    onTap: () => Navigator.pushNamed(
-                      context,
-                      Routes.myjob,
-                      arguments: true,
-                    ),
-                  ),
+                  child: _StatusItem(title: "모집 중 공고", value: '3', unit: "건"),
                 ),
               ],
             ),
@@ -92,57 +82,52 @@ class _StatusItem extends StatelessWidget {
   final String title;
   final String value;
   final String unit;
-  final VoidCallback? onTap;
 
   const _StatusItem({
     required this.title,
     required this.value,
     required this.unit,
-    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 13,
-              color: Color(0xFF17251D),
-              fontWeight: FontWeight.w600,
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 13,
+            color: Color(0xFF17251D),
+            fontWeight: FontWeight.w600,
           ),
+        ),
 
-          const SizedBox(height: 7),
+        const SizedBox(height: 7),
 
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: value,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                    color: Color(0xFF17251D),
-                  ),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: value,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                  color: Color(0xFF17251D),
                 ),
-                TextSpan(
-                  text: unit,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF3D594A),
-                  ),
+              ),
+              TextSpan(
+                text: unit,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF3D594A),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

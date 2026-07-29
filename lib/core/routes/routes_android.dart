@@ -93,10 +93,7 @@ class RoutesAndroid {
 
       // 내 전체 채용 공고 화면
       case Routes.myjob:
-        final isInit = settings.arguments as bool? ?? false;
-        return MaterialPageRoute(
-          builder: (context) => MyJobPage(isInit: isInit),
-        );
+        return MaterialPageRoute(builder: (context) => MyJobPage());
 
       // 채용 상세 화면
       case Routes.jobDetail:

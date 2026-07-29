@@ -2,6 +2,7 @@ import 'package:app_dev/core/provider/device_state.dart';
 import 'package:app_dev/core/routes/routes_android.dart';
 import 'package:app_dev/core/theme/dart_theme.dart';
 import 'package:app_dev/core/theme/light_theme.dart';
+import 'package:app_dev/page/employee/employee_main_page.dart';
 import 'package:app_dev/page/farmer/farmer_main_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -58,6 +59,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       themeMode: ref.watch(themeState),
       // home: const WelcomePage(),
       home: FarmerMainPage(),
+      // home: EmployeeMainPage(),
       onGenerateRoute: RoutesAndroid.onGenerateRoute,
     );
   }

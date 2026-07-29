@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/page/chat/chat_page.dart';
-import 'package:app_dev/page/job/job_page.dart';
 import 'package:app_dev/page/farmer/farmer_home.dart';
 import 'package:app_dev/page/management/management_page.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +24,9 @@ class _FarmerMainPageState extends State<FarmerMainPage>
         return const SizedBox.shrink();
 
       case 1:
-        return const Text("채용공고");
+        return const Text("인력관리");
 
       case 2:
-        return const Text("인력 관리");
-
-      case 3:
         return const Text("메시지");
 
       default:
@@ -107,7 +103,7 @@ class _FarmerMainPageState extends State<FarmerMainPage>
               physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               onPageChanged: onPageChanged,
-              children: [FarmerHome(), JobPage(), ManagementPage(), ChatPage()],
+              children: [FarmerHome(), ManagementPage(), ChatPage()],
             ),
             bottomNavigationBar: BottomNavigationBar(
               iconSize: 25,
@@ -116,10 +112,6 @@ class _FarmerMainPageState extends State<FarmerMainPage>
                   label: "홈",
                   activeIcon: Icon(Icons.home, size: 30),
                   icon: Icon(Icons.home_outlined, size: 30),
-                ),
-                BottomNavigationBarItem(
-                  label: "채용공고",
-                  icon: Icon(Icons.assignment_add, size: 30),
                 ),
                 BottomNavigationBarItem(
                   label: "관리",

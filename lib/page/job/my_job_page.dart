@@ -4,8 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyJobPage extends StatefulWidget {
-  final bool isInit;
-  const MyJobPage({super.key, this.isInit = false});
+  const MyJobPage({super.key});
 
   @override
   State<MyJobPage> createState() => _MyJobPageState();
@@ -17,11 +16,7 @@ class _MyJobPageState extends State<MyJobPage>
 
   @override
   void initState() {
-    tabController = TabController(
-      initialIndex: widget.isInit ? 1 : 0,
-      length: 3,
-      vsync: this,
-    );
+    tabController = TabController(initialIndex: 0, length: 3, vsync: this);
     super.initState();
   }
 
