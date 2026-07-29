@@ -1,18 +1,42 @@
 import 'dart:developer';
+import 'package:app_dev/core/routes/routes.dart';
+import 'package:app_dev/page/chat/chat_page.dart';
+import 'package:app_dev/page/job/job_page.dart';
+import 'package:app_dev/page/farmer/farmer_home.dart';
+import 'package:app_dev/page/management/management_page.dart';
 import 'package:flutter/material.dart';
 
-class WorkerScreen extends StatefulWidget {
-  const WorkerScreen({super.key});
+class FarmerMainPage extends StatefulWidget {
+  const FarmerMainPage({super.key});
 
   @override
-  State<WorkerScreen> createState() => _WorkerScreenState();
+  State<FarmerMainPage> createState() => _FarmerMainPageState();
 }
 
-class _WorkerScreenState extends State<WorkerScreen>
+class _FarmerMainPageState extends State<FarmerMainPage>
     with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   late PageController pageController;
   bool isLoading = false;
   int page = 0;
+
+  Widget? title() {
+    switch (page) {
+      case 0:
+        return const SizedBox.shrink();
+
+      case 1:
+        return const Text("채용공고");
+
+      case 2:
+        return const Text("인력 관리");
+
+      case 3:
+        return const Text("메시지");
+
+      default:
+        return null;
+    }
+  }
 
   void onPageChanged(int index) {
     setState(() => page = index);
@@ -61,17 +85,29 @@ class _WorkerScreenState extends State<WorkerScreen>
         child: SafeArea(
           top: false,
           child: Scaffold(
+            appBar: AppBar(
+              centerTitle: false,
+              title: title(),
+              leading: IconButton(
+                icon: const Icon(Icons.menu_rounded, size: 28),
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.setting);
+                },
+              ),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.notifications_none, size: 28),
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.notification);
+                  },
+                ),
+              ],
+            ),
             body: PageView(
               physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               onPageChanged: onPageChanged,
-              children: [
-                Center(child: Text("1")),
-                Center(child: Text("2")),
-                SizedBox(),
-                Center(child: Text("3")),
-                Center(child: Text("4")),
-              ],
+              children: [FarmerHome(), JobPage(), ManagementPage(), ChatPage()],
             ),
             bottomNavigationBar: BottomNavigationBar(
               iconSize: 25,
@@ -86,13 +122,13 @@ class _WorkerScreenState extends State<WorkerScreen>
                   icon: Icon(Icons.assignment_add, size: 30),
                 ),
                 BottomNavigationBarItem(
-                  label: "근무관리",
+                  label: "관리",
                   icon: Icon(Icons.assessment_outlined, size: 30),
                 ),
                 BottomNavigationBarItem(
-                  label: "MY",
-                  activeIcon: Icon(Icons.person, size: 30),
-                  icon: Icon(Icons.person_outline, size: 30),
+                  label: "메시지",
+                  activeIcon: Icon(Icons.chat, size: 30),
+                  icon: Icon(Icons.chat_outlined, size: 30),
                 ),
               ],
               onTap: movePage,
