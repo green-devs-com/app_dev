@@ -165,6 +165,23 @@ class ApplicantDetailPage extends StatelessWidget {
                                       color: context.theme.textColor,
                                     ),
                                   ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.location_on_outlined,
+                                        size: 15,
+                                        color: Colors.blueAccent,
+                                      ),
+                                      Text(
+                                        "전북 익산시 왕궁면",
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.blueAccent,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                   const SizedBox(height: 5),
 
                                   /// 국적 / 성별 / 나이
