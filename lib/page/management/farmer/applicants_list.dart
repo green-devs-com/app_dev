@@ -1,4 +1,4 @@
-import 'package:app_dev/page/management/widgets/applicant_card.dart';
+import 'package:app_dev/page/management/widgets/applied_card.dart';
 import 'package:flutter/material.dart';
 
 class ApplicantsList extends StatefulWidget {
@@ -16,12 +16,12 @@ class _ApplicantsListState extends State<ApplicantsList> {
         margin: EdgeInsets.only(top: 10, bottom: 20),
         child: Column(
           children: [
-            ApplicantCard(),
-            ApplicantCard(),
-            ApplicantCard(),
-            ApplicantCard(),
-            ApplicantCard(),
-            ApplicantCard(),
+            AppliedCard(),
+            AppliedCard(),
+            AppliedCard(),
+            AppliedCard(),
+            AppliedCard(),
+            AppliedCard(),
           ],
         ),
       ),

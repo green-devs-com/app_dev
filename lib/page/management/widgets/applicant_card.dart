@@ -1,6 +1,7 @@
 import 'package:app_dev/common/widgets/user_profile_container.dart';
 import 'package:app_dev/core/routes/routes.dart';
 import 'package:app_dev/core/theme/custom_theme.dart';
+import 'package:app_dev/page/management/widgets/applicant_status.dart';
 import 'package:flutter/material.dart';
 
 class ApplicantCard extends StatelessWidget {
@@ -26,19 +27,17 @@ class ApplicantCard extends StatelessWidget {
           ],
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UserProfileContainer(imageSize: 58),
             const SizedBox(width: 12),
-
-            /// 지원자 정보
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /// 이름
                   Text(
                     "NGUYEN VAN A",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -63,98 +62,28 @@ class ApplicantCard extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 5),
-
-                  /// 국적 / 성별 / 나이
                   Text(
-                    "베트남  |  남성(만 27세)",
+                    "사과 수확",
                     style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                      color: context.theme.textColor!.withValues(alpha: 0.7),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: context.theme.textColor!.withValues(alpha: 0.6),
                     ),
                   ),
-
-                  const SizedBox(height: 2),
-
-                  /// 근무 가능기간 / 언어
+                  const SizedBox(height: 5),
                   Text(
-                    "언어: 한국어 중급",
+                    "06. 11 09:00 출근 예정",
                     style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                      color: context.theme.textColor!.withValues(alpha: 0.7),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: context.theme.textColor!.withValues(alpha: 0.6),
                     ),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  /// 버튼
-                  Row(
-                    children: [
-                      /// 채용 승인
-                      Expanded(
-                        child: SizedBox(
-                          height: 35,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              // 승인
-                            },
-                            style: ElevatedButton.styleFrom(
-                              elevation: 0,
-                              backgroundColor: context.theme.mainColor,
-                              foregroundColor: Colors.white,
-                              padding: EdgeInsets.zero,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                            child: const Text(
-                              "채용 승인",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      const SizedBox(width: 10),
-
-                      /// 거절
-                      Expanded(
-                        child: SizedBox(
-                          height: 35,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              // 거절
-                            },
-                            style: ElevatedButton.styleFrom(
-                              elevation: 0,
-                              backgroundColor: const Color(0xffF3F3F3),
-                              foregroundColor: const Color(0xff555555),
-                              padding: EdgeInsets.zero,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                            child: Text(
-                              "거절",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
-                                color: context.theme.textColor,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),
             ),
+            const SizedBox(width: 10),
+            ApplicantStatus(),
           ],
         ),
       ),
